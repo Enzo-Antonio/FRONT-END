@@ -2,21 +2,24 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/Exercício/src/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Aula 02 (Acessibilidade)/Exercício/src/styles/style.css">
     <title>TechFood - Cardápio Digital</title>
 </head>
 <body>
     <header class="cabecalho-food">
-        <button class="logo">TechFood</button>
-        <button class="search-icon">🔍</button> 
-        <button class="cart-icon">🛒</button>   
+        <button class="logo" title="Ir para o início">TechFood</button>
+        
+        <button class="search-icon" aria-label="Buscar pratos">🔍</button> 
+        <button class="cart-icon" aria-label="Ver carrinho de compras">🛒</button>   
     </header>
 
     <section class="banner-hero">
         <h1>Sabor & Saber</h1>
         <p>A melhor gastronomia tecnológica da região.</p>
     </section>
-    <nav class="abas-lista">
+
+    <nav class="abas-lista" aria-label="Categorias do cardápio">
         <input type="radio" name="categoria" id="massa" checked>
         <label for="massa">Massas</label>
 
@@ -26,30 +29,36 @@
         <input type="radio" name="categoria" id="doce">
         <label for="doce">Doces</label>
     </nav>
+
     <main class="menu-container">
         <section class="aba-tela" id="tela-massas">
+            <h2 class="sr-only">Lista de pratos: Massas</h2>
+            
             <section class="grid-produtos">
                 <article class="card">
-                    <img src="/Exercício/src/images/laufey.webp">
+                    <img src="/Aula 02 (Acessibilidade)/Exercício/src/images/lasanha.jfif" alt="Lasanha de massa artesanal com molho bolonhesa e cobertura de queijo gratinado">
                     <h3>Lasanha Tradicional</h3>
                     <p>Massa artesanal ao molho bolonhesa com 4 queijos.</p>
                     <span class="preco">R$ 45,90</span>
-                    <button class="btn-pedir" onclick="alert('Adicionado')">Pedir</button>
+                    <button class="btn-pedir" onclick="alert('Adicionado')">Adicionar ao pedido</button>
                 </article>
 
                 <article class="card">
-                    <img src="/Exercício/src/images/mitski.webp">
+                    <img src="/Aula 02 (Acessibilidade)/Exercício/src/images/ravioli.jfif" alt="Prato de ravioli verde recheado com espinafre e ricota">
                     <h3>Ravioli de Espinafre</h3>
                     <p>Recheado com ricota fresca e nozes picadas.</p>
                     <span class="preco">R$ 39,00</span>
-                    <button class="btn-pedir">Pedir</button>
+                    <button class="btn-pedir">Adicionar ao pedido</button>
                 </article>
             </section>
         </section>
     </main>
 
     <footer class="rodape">
-        <p>Siga-nos: <a href="#"> FaceBook</a> <a href="#"> InstaGram</a></p>
+        <p>Siga-nos: 
+            <a href="#" aria-label="Visitar nossa página no Facebook">FaceBook</a> 
+            <a href="#" aria-label="Visitar nosso perfil no Instagram">InstaGram</a>
+        </p>
     </footer>
 </body>
 </html>
