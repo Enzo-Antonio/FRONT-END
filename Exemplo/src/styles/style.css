@@ -7,7 +7,7 @@
 
 .topo-loja {
     background-color: rgb(67, 67, 255);
-    color: white;
+    color: yellow;
     padding: 20px;
     text-align: center;
 
@@ -25,16 +25,133 @@
 #menu li {
     display: inline-block;
     margin: 0 10px;
-    color: white;
+    color: yellow;
 }
 
 #menu a {
-    color: white;
+    color: yellow;
     text-decoration: none;
     font-weight: bold;
 }
 
 #secao-massas h2 {
     text-align: center;
+    color: rgb(67, 142, 255);
+}
+
+.vitrine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+#secao-sobremesas h2 {
+    text-align: center;
+    color: rgb(67, 142, 255);
+}
+
+.card img {
+    max-width: 100%;
+    border: 1px solid;
+    border-radius: 5%;
+
+    height: auto;
+}
+
+.card {
+    background-color: rgb(67, 67, 255);
+    color: yellow;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid yellow;
+    border-radius: 5%;
+    box-shadow: 20px;
+}
+
+#secao-sobremesas .card {
+    background-color: rgb(67, 142, 255);
+}
+
+.preco {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.bt-pedido {
+    background-color: yellowgreen;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 10px;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 5%;
+}
+
+.bt-pedido:hover {
+    transform: scale(1.10);
+    background-color: white;
+    border: black 1px solid;
     color: rgb(67, 67, 255);
+}
+
+/* MEDIAS */
+@media screen {
+    .topo-loja h1{
+        letter-spacing: 2px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* TELA TABLET */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .vitrine-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* TELA CELULAR */
+@media screen and (max-width: 600px), (orientation: portrait) {
+    /* Menu Hamburguer/responsivo/retrátil */
+    #label-menu{
+        display: block;
+        font-size: 2.5rem;
+        color: #f1c40f;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    /* Verificando se o bt_menu está clicado e se tem irmão */
+    #bt-menu:checked ~ #menu ul{
+        display: block;
+        padding: 10px 0;
+    }
+
+    .vitrine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .desc {
+        display: none;
+    }
+
+    #menu li {
+        display: block;
+        margin: 15px 0;
+        border-bottom: 1px solid rgb(67, 67, 255);
+        padding-bottom: 10px;
+    }
+}
+
+@media not screen {
+   #menu, .bt-pedido, #label-menu, #bt-menu  {
+       display: none;
+   }
 }
