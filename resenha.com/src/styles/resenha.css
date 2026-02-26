@@ -1,7 +1,22 @@
 *{
-    margin: 0px;
-    box-sizing: border-box;
+    margin: 0px; box-sizing: border-box; background-color: #F8F9FA;
 }
 @media (max-width: 600px) {
     body {background-color: rgb(99, 99, 99);}
+}
+.card {
+    padding: 20px;
+    margin: 20px;
+    border: solid #2D2D2D;
+    text-align: center;
+    align-items: center;
+    background-color: #D4AF37;
+}
+.card button {
+    background-color: #2D2D2D;
+    color: #D4AF37;
+}
+.card img {
+    max-width: 100%;
+    align-items: center;
 }
