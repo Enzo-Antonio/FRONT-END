@@ -30,7 +30,6 @@ const cquepece = confirm(`Fala resenhudo, ${nomeFormatado}, você gostaria de fa
 if(cquepece) {
     let quantidade = prompt("Quantas unidades? ")
     let total = lasanha.preco * quantidade
-    // alert(total)
     alert(`Bacana, o seu total de ${lasanha.nome} é de: ${lasanha.exibirValor(total)}`)
 } else {
     alert(`Obrigado pela visita, volte sempre, ${nomeFormatado}!`)
