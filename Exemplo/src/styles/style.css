@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(67, 142, 255);
 }
 
 .topo-loja {
@@ -10,7 +11,15 @@
     color: yellow;
     padding: 20px;
     text-align: center;
+}
 
+.topo-loja h1, 
+.topo-loja p, 
+.topo-loja li, 
+.topo-loja ul, 
+.topo-loja label,
+.topo-loja a {
+    background-color: rgb(67, 67, 255);
 }
 
 #bt_menu, #label-menu{
@@ -36,7 +45,7 @@
 
 #secao-massas h2 {
     text-align: center;
-    color: rgb(67, 142, 255);
+    color: yellow;
 }
 
 .vitrine-grid {
@@ -48,13 +57,13 @@
 
 #secao-sobremesas h2 {
     text-align: center;
-    color: rgb(67, 142, 255);
+    color: yellow;
 }
 
 .card img {
     max-width: 100%;
     border: 1px solid;
-    border-radius: 5%;
+    border-radius: 1cm;
 
     height: auto;
 }
@@ -65,12 +74,20 @@
     text-align: center;
     padding: 10px;
     border: 1px solid yellow;
-    border-radius: 5%;
+    border-radius: 1cm;
     box-shadow: 20px;
 }
 
+.card h3 {
+    background-color: rgb(67, 67, 255);
+}
+
+.card span {
+    background-color: rgb(67, 67, 255);
+}
+
 #secao-sobremesas .card {
-    background-color: rgb(67, 142, 255);
+    background-color: rgb(67, 67, 255);
 }
 
 .preco {
@@ -87,11 +104,11 @@
     padding: 10px;
     width: 50%;
     cursor: pointer;
-    border-radius: 5%;
+    border-radius: 1cm;
 }
 
 .bt-pedido:hover {
-    transform: scale(1.10);
+    transform: scale(1.025);
     background-color: white;
     border: black 1px solid;
     color: rgb(67, 67, 255);

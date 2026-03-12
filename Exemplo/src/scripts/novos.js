@@ -1,13 +1,26 @@
-const tituloRaviole = document.querySelector('#card-raviole h3')
-const botoesCompra = document.querySelector('.btn-pedido')
-const quartoCard = document.querySelector('.cad:nth-child(3)')
 
-console.log("1. Mostrando o título NHOQUE (Pelo ID):", tituloRaviole)
-console.log("2. Quantidade de botões de pedido: ", botoesCompra)
-console.log("2. Quantidade de botões de pedido: ", botoesCompra.length)
+const tituloNhoque = document.querySelector('#card-nhoque h3');
+const botoesCompra = document.querySelectorAll('.btn-pedido');
 
-const data = new Date()
-const hora = data.getHours()
+const imgLasanha = document.querySelector('img[alt="Lasanha Tech"]');
 
-const saudacao = document.querySelector('#boas-vindas')
-saudacao.textContent = hora < 18 ? "Boa tarde!": "Boa noite!"
+const checkMenu = document.querySelector('#bt_menu');
+
+console.log("=== TESTES COM QUERY SELECTOR ===");
+
+if (tituloNhoque) {
+    console.log("Título capturado:", tituloNhoque.innerText);
+}
+
+console.log("Quantidade de botões de pedido:", botoesCompra.length);
+
+if (botoesCompra.length > 0) {
+    botoesCompra[0].textContent = "Comprar Agora!";
+    console.log("Texto do primeiro botão alterado com sucesso.");
+}
+
+const precoLasanha = document.querySelector('.card .preco');
+console.log("Preço da Lasanha:", precoLasanha.innerText);
+
+const elementoInexistente = document.querySelector('.classe-que-nao-existe');
+console.log("Resultado de seletor inexistente:", elementoInexistente); 
