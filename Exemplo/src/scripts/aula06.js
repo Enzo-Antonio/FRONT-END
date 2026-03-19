@@ -47,3 +47,4 @@ cards.forEach((card) => {
         card.style.boxShadow = "none";
     });
 });
+
