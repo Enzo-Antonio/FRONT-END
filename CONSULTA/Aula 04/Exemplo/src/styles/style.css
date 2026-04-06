@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(67, 142, 255);
+}
+
+.topo-loja {
+    background-color: rgb(67, 67, 255);
+    color: yellow;
+    padding: 20px;
+    text-align: center;
+}
+
+.topo-loja h1, 
+.topo-loja p, 
+.topo-loja li, 
+.topo-loja ul, 
+.topo-loja label,
+.topo-loja a {
+    background-color: rgb(67, 67, 255);
+}
+
+#bt_menu, #label-menu{
+    display: none;
+}
+
+#menu ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+#menu li {
+    display: inline-block;
+    margin: 0 10px;
+    color: yellow;
+}
+
+#menu a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#secao-massas h2 {
+    text-align: center;
+    color: yellow;
+}
+
+.vitrine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+#secao-sobremesas h2 {
+    text-align: center;
+    color: yellow;
+}
+
+.card img {
+    max-width: 100%;
+    border: 1px solid;
+    border-radius: 1cm;
+
+    height: auto;
+}
+
+.card {
+    background-color: rgb(67, 67, 255);
+    color: yellow;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid yellow;
+    border-radius: 1cm;
+    box-shadow: 20px;
+}
+
+.card h3 {
+    background-color: rgb(67, 67, 255);
+}
+
+.card span {
+    background-color: rgb(67, 67, 255);
+}
+
+#secao-sobremesas .card {
+    background-color: rgb(67, 67, 255);
+}
+
+.preco {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.bt-pedido {
+    background-color: yellowgreen;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 10px;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 1cm;
+}
+
+.bt-pedido:hover {
+    transform: scale(1.025);
+    background-color: white;
+    border: black 1px solid;
+    color: rgb(67, 67, 255);
+}
+
+/* MEDIAS */
+@media screen {
+    .topo-loja h1{
+        letter-spacing: 2px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* TELA TABLET */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .vitrine-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* TELA CELULAR */
+@media screen and (max-width: 600px), (orientation: portrait) {
+    /* Menu Hamburguer/responsivo/retrátil */
+    #label-menu{
+        display: block;
+        font-size: 2.5rem;
+        color: #f1c40f;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    /* Verificando se o bt_menu está clicado e se tem irmão */
+    #bt-menu:checked ~ #menu ul{
+        display: block;
+        padding: 10px 0;
+    }
+
+    .vitrine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .desc {
+        display: none;
+    }
+
+    #menu li {
+        display: block;
+        margin: 15px 0;
+        border-bottom: 1px solid rgb(67, 67, 255);
+        padding-bottom: 10px;
+    }
+}
+
+@media not screen {
+   #menu, .bt-pedido, #label-menu, #bt-menu  {
+       display: none;
+   }
+}
