@@ -128,4 +128,31 @@ function adicionarItemAoResumo(nome, qtd, preco, cardOrigem) {
     const btnRemover = document.createElement('button')
     btnRemover.textContent = '❌'
     btnRemover.classList.add('btn-remover')
+
+    btnRemover.addEventListener('click', ()=>{
+        itemLi.remove()
+
+        const badge = cardOrigem.querySelector('.badge-adicionado')
+
+        if(badge) badge.remove()
+
+        if(listaResumo.children.length === 0) {
+            secaoResumo.style.display = 'none'
+        }
+    })
+
+    itemLi.appendChild(textoSpan)
+    itemLi.appendChild(btnRemover)
+    listaResumo.appendChild(itemLi)
+
+    const btnLimpar = document.querySelector('btn-limpar')
+    
+    if(btnLimpar){
+        btnLimpar.addEventListener('click', ()=>{
+            const listaResumo = document.querySelector('#lista-resumo')
+            const secaoResumo = document.querySelector('#secao-resumo')
+
+            document.querySelector('.badge-adicionado').forEach(excluir) => excluir.remove()
+        })
+    }
 }
