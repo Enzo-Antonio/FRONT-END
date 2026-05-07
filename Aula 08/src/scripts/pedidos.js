@@ -25,31 +25,53 @@ function renderizarPedidos() {
     lista.innerHTML = ''
     let total = 0
 
-    if (!secaoResumo || !listaResumo) return;
+    pedidos.forEach(function(pedido, indice){
 
-    // Passo 2: cria o <span> com o texto
-    const textoSpan = document.createElement("span");
-    textoSpan.innerHTML = ""
+        const li = document.createElement('li')
+        li.classList.add('item-pedido')
 
-    // Passo 3: cria o botão ✕
-    const btnRemover = document.createElement("button");
-    btnRemover.textContent = "✕";
-    btnRemover.classList.add("btn-remover");
+        if (!secaoResumo || !listaResumo) return;
 
-    // PARTE 7 — remove() (escrever ao vivo)
-    btnRemover.addEventListener("click", () => {
-        itemLi.remove();
+        // Passo 2: cria o <span> com o texto
+        const textoSpan = document.createElement("span");
+        textoSpan.innerHTML = "<strong>" + pedidos.nome + "</strong>" + " - " + 
+        pedidos.qtd + " x " + " R$ " + pedidos.preco.toFixed(2).replace(".", ",") + 
+        " = <span class ='subtotal-item'> R$ " + pedidos.subtotal.toFixed(2).replace(".", ",")
 
-        const badge = cardOrigem.querySelector(".badge-adicionado");
-        if (badge) badge.remove();
+        // Passo 3: cria o botão ✕
+        const btnRemover = document.createElement("button");
+        btnRemover.textContent = "✕";
+        btnRemover.classList.add("btn-remover");
 
-        if (listaResumo.children.length === 0) {
-        secaoResumo.style.display = "none";
-        }
-    });
+        // PARTE 7 — remove() (escrever ao vivo)
+        btnRemover.addEventListener("click", () => {
+            const lista = JSON.parse(localStorage.getItem('techfood_pedidos') || '[]')
+
+            lista.splice(indice, 1)
+
+            localStorage.setItem('techfood_pedidos')
+            renderizarPedidos()
+        })
+        li.appendChild(textoSpan);
+        li.appendChild(btnRemover);
+        lista.appendChild(li);
+        total += pedido.subtotal
+
+        const totalFmt = 'R$' + total.toFixed(2).replace('.', ',')
+
+    })
 
     // Passo 4: monta a estrutura e insere na página
-    itemLi.appendChild(textoSpan);
-    itemLi.appendChild(btnRemover);
-    listaResumo.appendChild(itemLi);
+    
+}
+
+function configurarLimparPedidos() {
+    const btn = document.querySelector('btn-limpar-pedidos')
+
+    if(btn) return
+
+    btn.addEventListener('click', function() {
+        localStorage.removeItem('techfood_pedidos')
+        renderizarPedidos(btn)
+    })
 }
