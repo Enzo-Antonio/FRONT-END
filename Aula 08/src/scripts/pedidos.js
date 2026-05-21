@@ -58,6 +58,8 @@ function renderizarPedidos() {
         total += pedido.subtotal
 
         const totalFmt = 'R$' + total.toFixed(2).replace('.', ',')
+        if (spanTotal) spanTotal.textContent = totalFmt
+        if (spanResumo) spanResumo.textContent = totalFmt
 
     })
 
